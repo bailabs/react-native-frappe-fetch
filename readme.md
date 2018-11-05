@@ -40,4 +40,4 @@ Client.postApi("xxxxx.xxxxx.test_api", data).then((response) => {
 
 ## License
 
-Copyright Bai Web and Mobile Lab. Released under the terms of the MIT lecense.
+Copyright [Bai Web and Mobile Lab](https://bai.ph/). Released under the terms of the MIT lecense.
