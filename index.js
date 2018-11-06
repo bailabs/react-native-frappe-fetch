@@ -5,6 +5,14 @@ function Client(settings) {
 
 }
 
+Client.prototype.insert = function(doc) {
+  return fetch(this.url + "/api/resource/" + doc.doctype, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ data: JSON.stringify(doc) })
+  });
+};
+
 Client.prototype.getList = function(doctype) {
   return fetch(this.url + "/api/resource/" + doctype, { method: "GET" }).then((res) => res.json());
 };
