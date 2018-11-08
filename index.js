@@ -25,6 +25,29 @@ Client.prototype.delete = function(doctype, name) {
   });
 };
 
+Client.prototype.cancel = function(doctype, name) {
+  return fetch(this.url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      "cmd": "frappe.client.cancel",
+      "doctype": doctype,
+      "name": name
+    })
+  });
+};
+
+Client.prototype.submit = function(doc) {
+  return fetch(this.url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      "cmd": "frappe.client.submit",
+      "doc": JSON.stringify(doc)
+    })
+  }).then((res) => res.json());
+};
+
 Client.prototype.getList = function(doctype) {
   return fetch(this.url + "/api/resource/" + doctype, { method: "GET" }).then((res) => res.json());
 };
