@@ -1,4 +1,4 @@
-function Client(settings) {
+ function Client(settings) {
 
   // Initialize the settings
   this.url = settings.url;
@@ -10,6 +10,18 @@ Client.prototype.insert = function(doc) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ data: JSON.stringify(doc) })
+  });
+};
+
+Client.prototype.delete = function(doctype, name) {
+  return fetch(this.url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      "cmd": "frappe.client.delete",
+      "doctype": doctype,
+      "name": name
+    })
   });
 };
 
