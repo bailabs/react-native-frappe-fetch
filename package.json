@@ -1,6 +1,6 @@
 {
   "name": "react-native-frappe-fetch",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "A client working with Frappe APIs",
   "main": "index.js",
   "scripts": {
