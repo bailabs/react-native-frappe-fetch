@@ -63,7 +63,6 @@ Client.prototype.getApi = function(method) {
 Client.prototype.postApi = function(method, data) {
   return fetch(this.url + "/api/method/" + method, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ data })
   });
 };
